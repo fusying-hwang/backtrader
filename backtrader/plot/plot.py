@@ -98,6 +98,7 @@ class Plot_OldSync(with_metaclass(MetaParams, object)):
     params = (('scheme', PlotScheme()),)
 
     def __init__(self, **kwargs):
+        matplotlib.use('WebAgg')
         for pname, pvalue in kwargs.items():
             setattr(self.p.scheme, pname, pvalue)
 
